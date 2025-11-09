@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .presentation {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide h1 {
+            font-size: 3.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide h2 {
+            font-size: 2.5em;
+            color: #764ba2;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slide h3 {
+            font-size: 1.8em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .metric-value {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .achievements li {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #f8f9ff;
+            border-left: 5px solid #667eea;
+            border-radius: 10px;
+            font-size: 1.2em;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .achievements li:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            background: #667eea;
+            color: white;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+            }
+            
+            .slide h1 {
+                font-size: 2.5em;
+            }
+            
+            .slide h2 {
+                font-size: 2em;
+            }
+            
+            .metric-value {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="presentation">
+        <!-- Slide 1: Титульний -->
+        <div class="slide">
+            <h1>Digital Marketing Professional — Штурмак Юрій</h1>
+            <p class="subtitle">Експерт з лідогенерації та масштабування бізнесу</p>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">1200</div>
+                    <div class="metric-label">лідів за день</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$0.01</div>
+                    <div class="metric-label">рекордний CPL</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">1000%</div>
+                    <div class="metric-label">максимальний ROI</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Контекстна реклама -->
+        <div class="slide">
+            <h2><span class="icon">🎯</span> Контекстна і таргетована реклама</h2>
+            <ul class="achievements">
+                <li><strong>Google Ads:</strong> CTR 4-8%, зниження CPC на 30-45%</li>
+                <li><strong>Meta Ads:</strong> середня вартість ліда $0.05-3</li>
+                <li><strong>Рекорд:</strong> найдешевший лід $0.01</li>
+                <li><strong>Ремаркетинг:</strong> повернення 15-25% відвідувачів</li>
+                <li><strong>ROI:</strong> до 250-1000% за різними моделями оплати</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: Лідогенерація -->
+        <div class="slide">
+            <h2><span class="icon">📈</span> Масштабна лідогенерація</h2>
+            <div class="highlight">
+                <h3 style="color: white; margin-bottom: 20px;">Рекордні показники</h3>
+                <p style="font-size: 1.3em; line-height: 1.8;">
+                    ✓ Від 300 до 1,200+ лідів на добу<br>
+                    ✓ Вартість ліда $0.01-0.05<br>
+                    ✓ Конверсія в клієнта 15-30%<br>
+                    ✓ Масштабування колл-центру з 0 до 60 операторів
+                </p>
+            </div>
+            <ul class="achievements">
+                <li>Інтеграція CRM та телефонії для відстеження ефективності</li>
+                <li>Оптимізація воронки продажів на всіх етапах</li>
+            </ul>
+        </div>
+
+        <!-- Slide 4: Лендинги -->
+        <div class="slide">
+            <h2><span class="icon">🎨</span> Лендинги та конверсія</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">8-25%</div>
+                    <div class="metric-label">Conversion Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">50+</div>
+                    <div class="metric-label">A/B тестів</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">30-60%</div>
+                    <div class="metric-label">ріст ефективності</div>
+                </div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-tag">Tilda</div>
+                <div class="skill-tag">WordPress</div>
+                <div class="skill-tag">Elementor</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: SEO/SEM -->
+        <div class="slide">
+            <h2><span class="icon">🔍</span> SEO & SEM</h2>
+            <ul class="achievements">
+                <li>Виведення в ТОП-10 Google за 60-120 днів</li>
+                <li>Зростання органічного трафіку на 80-150% за 6 місяців</li>
+                <li>PageSpeed до 85-95 балів</li>
+                <li>Зниження відмов на 20-35%</li>
+                <li>ASO мобільних додатків: +120-200% завантажень</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: SMM -->
+        <div class="slide">
+            <h2><span class="icon">📱</span> Соціальні мережі</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">50-120%</div>
+                    <div class="metric-label">ріст аудиторії за квартал</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">5-12%</div>
+                    <div class="metric-label">engagement rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">2 млн</div>
+                    <div class="metric-label">переглядів відео</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3-7%</div>
+                    <div class="metric-label">конверсія в клієнтів</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Аналітика -->
+        <div class="slide">
+            <h2><span class="icon">📊</span> Аналітика та стратегія</h2>
+            <ul class="achievements">
+                <li>Google Analytics 4, GTM, Search Console</li>
+                <li>Відстеження 20+ ключових подій та цілей</li>
+                <li>Конкурентний аналіз 15-30 компаній</li>
+                <li>Customer journey mapping</li>
+                <li>Бюджети $5K-$20K з точністю прогнозування 85-92%</li>
+            </ul>
+        </div>
+
+        <!-- Slide 8: E-commerce -->
+        <div class="slide">
+            <h2><span class="icon">🛒</span> E-commerce результати</h2>
+            <div class="highlight">
+                <h3 style="color: white; margin-bottom: 20px;">Конверсія та утримання</h3>
+                <div class="metrics-grid">
+                    <div style="text-align: center;">
+                        <div class="metric-value">0.1% → 4-7%</div>
+                        <div class="metric-label">Конверсія</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="metric-value">+25-40%</div>
+                        <div class="metric-label">Середній чек</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="metric-value">40-55%</div>
+                        <div class="metric-label">Повернення клієнтів</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Підсумок -->
+        <div class="slide">
+            <h2><span class="icon">⭐</span> Ключові компетенції</h2>
+            <div class="skills-container">
+                <div class="skill-tag">Google Ads</div>
+                <div class="skill-tag">Meta Ads</div>
+                <div class="skill-tag">Лідогенерація</div>
+                <div class="skill-tag">CRM</div>
+                <div class="skill-tag">SEO/SEM</div>
+                <div class="skill-tag">Landing Pages</div>
+                <div class="skill-tag">Analytics</div>
+                <div class="skill-tag">E-commerce</div>
+                <div class="skill-tag">SMM</div>
+                <div class="skill-tag">A/B Testing</div>
+                <div class="skill-tag">Ремаркетинг</div>
+                <div class="skill-tag">ASO</div>
+            </div>
+            <div class="highlight" style="margin-top: 40px;">
+                <h3 style="color: white; text-align: center; font-size: 2em;">
+                    Готовий до нових викликів та масштабування вашого бізнесу! 🚀
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="scrollToTop()">↑</button>
+        <button class="nav-btn" onclick="scrollToBottom()">↓</button>
+    </div>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.body.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+            
+            document.getElementById('progressBar').style.width = scrollPercentage + '%';
+        });
+
+        // Анімація появи слайдів при скролі
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide').forEach(slide => {
+            observer.observe(slide);
+        });
+    </script>
+</body>
+</html>
