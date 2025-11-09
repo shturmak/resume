@@ -158,30 +158,7 @@
         }
 
         .navigation {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .nav-btn {
-            background: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            transform: scale(1.1);
-            background: #667eea;
-            color: white;
+            display: none;
         }
 
         .progress-bar {
@@ -208,6 +185,16 @@
                 font-size: 1.8em;
                 line-height: 1.2;
                 word-wrap: break-word;
+            }
+            
+            .slide img {
+                width: 120px !important;
+                height: 120px !important;
+            }
+            
+            .slide > div {
+                justify-content: center !important;
+                text-align: center;
             }
             
             .slide h2 {
@@ -264,14 +251,11 @@
             }
             
             .navigation {
-                bottom: 15px;
-                right: 15px;
+                display: none;
             }
             
             .nav-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2em;
+                display: none;
             }
         }
         
@@ -304,7 +288,10 @@
     <div class="presentation">
         <!-- Slide 1: Титульний -->
         <div class="slide">
-            <h1>Digital Marketing Professional — Штурмак Юрій</h1>
+            <div style="display: flex; align-items: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
+                <img src="ab0a12833dfbde8016f078e708ba3e08.jpg" alt="Штурмак Юрій" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid #667eea; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <h1 style="margin: 0; flex: 1; min-width: 250px;">Digital Marketing Professional — Штурмак Юрій</h1>
+            </div>
             <p class="subtitle">Експерт з лідогенерації та масштабування бізнесу</p>
             <div class="metrics-grid">
                 <div class="metric-card">
@@ -463,7 +450,7 @@
                 <div class="skill-tag">ASO</div>
             </div>
             <div class="highlight" style="margin-top: 40px;">
-                <h3 style="color: white; text-align: center; font-size: 2em;">
+                <h3 style="color: white; text-align: center; font-size: 1.5em; line-height: 1.4;">
                     Готовий до нових викликів та масштабування вашого бізнесу! 🚀
                 </h3>
             </div>
